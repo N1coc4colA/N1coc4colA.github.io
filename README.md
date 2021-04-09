@@ -9,3 +9,5 @@
 
 ## Most Used Languages
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=n1coc4cola&langs_count=10&hide_title=true)
+
+{{ STARS }}
