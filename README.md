@@ -1,4 +1,4 @@
-# Hi :blush: N1coc4colA's account :wave:
+# N1coc4colA's account
 <!--
 **alvarosamudio/alvarosamudio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->
