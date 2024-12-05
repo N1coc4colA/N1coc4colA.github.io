@@ -1,66 +1,293 @@
-/* Reset default margin and padding */
-body, h2, p, input, button {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%);
+    color: white;
+    transition: background 0.3s ease;
+}
+
+h1, h2, h3 {
+    color: white; /* Texte des titres en blanc */
+}
+
+/* Liens */
+a {
+    text-decoration: none;
+    color: white; /* Liens blancs */
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #b3e5e6; /* Changement de couleur au survol */
+    }
+
+/* Styles g�n�raux */
+ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-around;
     color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+    ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+        display: block;
+    }
+
+        ul li a:hover {
+            background-color: #018A96;
+        }
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initialement hors �cran */
+    height: 100%;
+    width: 250px;
+    background: linear-gradient(135deg, rgb(43, 43, 63), rgb(30, 30, 45));
+    color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
+    border-radius: 8px 0 0 8px; /* Arrondi sur la gauche */
+    z-index: 1000;
+    padding-top: 6vh;
+    padding-left: 10px; /* Un peu de respiration sur la gauche */
+    padding-bottom: 6vh;
+    transition: transform 0.4s ease-in-out; /* Animation fluide */
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 1rem; /* Espacement entre les �l�ments */
+}
+
+    /* Quand la sidebar est ouverte */
+    .sidebar.open {
+        transform: translateX(-250px); /* Fait appara�tre la sidebar */
+    }
+
+    /* Style des liens dans la sidebar */
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar li {
+        margin: 0; /* Supprime les marges pour un alignement propre */
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* S�paration l�g�re */
+    }
+
+        .sidebar li:last-child {
+            border-bottom: none; /* Supprime la bordure du dernier �l�ment */
+        }
+
+        .sidebar li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 0; /* R�duit l'espace autour du texte */
+            display: inline-block; /* Pour limiter le rectangle � la taille du texte */
+        }
+
+            .sidebar li a:hover {
+                color: #b3e5e6;
+                background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une l�g�re teinte bleue */
+                border-radius: 4px; /* Pour arrondir les coins du rectangle */
+            }
+
+/* Bouton Hamburger */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
     cursor: pointer;
+    z-index: 1010;
+    color: white;
+    transition: transform 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #45a049;
+    .menu-toggle:hover {
+        transform: rotate(90deg);
+    }
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+        .sidebar.open {
+            transform: translateX(-200px);
+        }
 }
 
-.form-footer {
+
+/* Logo */
+.logo {
+    height: 100%; /* Assure que le logo prenne toute la hauteur de la barre */
+    display: flex;
+    align-items: center; /* Aligne verticalement le logo */
+    justify-content: center; /* Centre le logo horizontalement */
+}
+
+    .logo img {
+        max-height: 100%; /* Le logo ne d�passera pas la hauteur de la barre */
+        max-width: 100%; /* Le logo ne d�passera pas la largeur de son conteneur */
+        object-fit: contain; /* Assure que le logo garde ses proportions sans d�formation */
+    }
+
+/* Section d'accueil */
+header {
     text-align: center;
-    margin-top: 10px;
+    padding-top: 7vh;
+    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%);
+    color: white;
 }
 
-.form-footer a {
-    color: #4CAF50;
-    text-decoration: none;
+    header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+/* Section � propos */
+section {
+    padding: 2rem 1rem;
 }
 
-.form-footer a:hover {
-    text-decoration: underline;
+.about {
+    text-align: center;
+    background-color: rgba(179, 229, 230, 0.8); /* Teinte pastel oc�an avec transparence */
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Flou d'arri�re-plan pour un effet lisse */
+}
+
+/* Galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marqu�e au survol */
+        }
+
+/* Pied de page */
+footer {
+    background-color: rgba(79,88,103,255);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Flexbox centr� */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Vagues */
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /* Fix pour safari */
+    min-height: 75px;
+    max-height: 150px;
+}
+
+/* Section de contenu */
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond avec transparence */
+    backdrop-filter: blur(10px); /* Flou d'arri�re-plan pour un effet lisse */
+}
+
+/* Animation des vagues */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+#myCanvas {
+    display: block; /* Remove inline spacing */
+}
+
+.fill-it {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Prevent scrollbars */
 }
