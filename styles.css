@@ -1,10 +1,9 @@
-/* Styles généraux */
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%); /* Utilisation du dégradé du header comme fond */
-    color: white; /* Texte en blanc */
-    transition: background 0.3s ease; /* Transition fluide pour le fond */
+    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%);
+    color: white;
+    transition: background 0.3s ease;
 }
 
 h1, h2, h3 {
@@ -22,42 +21,84 @@ a {
         color: #b3e5e6; /* Changement de couleur au survol */
     }
 
-/* Menu */
-nav {
-    background-color: rgba(2, 104, 115, 0.9); /* Bleu vert avec transparence */
-    padding: 1rem 2rem;
+/* Styles généraux */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    background-color: #026873;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    position: relative;
 }
 
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 1rem;
+    ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+        display: block;
     }
 
-        nav ul li {
-            font-weight: bold;
+        ul li a:hover {
+            background-color: #018A96;
         }
 
-            nav ul li a {
-                color: white;
-                transition: color 0.3s;
-            }
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding-top: 20px;
+    display: none;
+    z-index: 1000;
+    padding-top: 8vh;
+}
 
-                nav ul li a:hover {
-                    color: #b3e5e6; /* Légère variation au survol */
-                }
+/* Bouton Hamburger */
+.menu-toggle {
+    position: fixed; /* Fixe le bouton en haut à droite */
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1010; /* Plus élevé que la sidebar pour être visible */
+    color: white; /* Assure que le bouton est visible */
+}
+
+/* Cacher la sidebar par défaut */
+.sidebar {
+    display: none;
+}
+
+    /* Quand la sidebar est ouverte, afficher */
+    .sidebar.open {
+        display: block;
+    }
+
+/* Logo */
+.logo {
+    height: 100%; /* Assure que le logo prenne toute la hauteur de la barre */
+    display: flex;
+    align-items: center; /* Aligne verticalement le logo */
+    justify-content: center; /* Centre le logo horizontalement */
+}
+
+    .logo img {
+        max-height: 100%; /* Le logo ne dépassera pas la hauteur de la barre */
+        max-width: 100%; /* Le logo ne dépassera pas la largeur de son conteneur */
+        object-fit: contain; /* Assure que le logo garde ses proportions sans déformation */
+    }
 
 /* Section d'accueil */
 header {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 7vh;
     background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%);
     color: white;
 }
@@ -81,7 +122,6 @@ section {
     text-align: center;
     background-color: rgba(179, 229, 230, 0.8); /* Teinte pastel océan avec transparence */
     padding: 2rem;
-    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
 }
@@ -108,7 +148,7 @@ section {
 
 /* Pied de page */
 footer {
-    background-color: rgba(2, 104, 115, 0.9);
+    background-color: rgb(128 128 128);
     color: white;
     text-align: center;
     padding: 1rem;
