@@ -27,7 +27,6 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
     color: white;
     font-weight: bold;
     position: relative;
@@ -56,13 +55,12 @@ ul {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
     border-radius: 8px 0 0 8px; /* Arrondi sur la gauche */
     z-index: 1000;
-    padding-top: 6vh;
-    padding-left: 10px; /* Un peu de respiration sur la gauche */
+    padding-top: 8vh;
+    padding-left: 15px; /* Un peu de respiration sur la gauche */
     padding-bottom: 6vh;
     transition: transform 0.4s ease-in-out; /* Animation fluide */
     display: flex;
     flex-direction: column; /* Alignement vertical */
-    gap: 1rem; /* Espacement entre les éléments */
 }
 
     /* Quand la sidebar est ouverte */
@@ -78,7 +76,6 @@ ul {
     }
 
     .sidebar li {
-        margin: 0; /* Supprime les marges pour un alignement propre */
         text-align: left;
         font-size: 1rem;
         font-weight: 500;
@@ -90,6 +87,8 @@ ul {
         }
 
         .sidebar li a {
+            margin-top: 1vh;
+            margin-bottom: 1vh;
             color: white;
             text-decoration: none;
             transition: color 0.3s ease, background-color 0.3s ease;
@@ -176,25 +175,26 @@ section {
     backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
 }
 
-/* Galerie */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille responsive */
+    gap: 1rem; /* Espacement entre les images */
 }
 
     .gallery img {
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 200px; /* Hauteur fixe pour les images */
+        object-fit: cover; /* Remplit le cadre et recadre si nécessaire */
+        border-radius: 10px; /* Coins arrondis pour un design agréable */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet visuel */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
     }
 
         .gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05); /* Zoom léger au survol */
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marquée au survol */
         }
+
 
 /* Pied de page */
 footer {
