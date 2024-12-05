@@ -28,7 +28,6 @@ ul {
     padding: 0;
     display: flex;
     justify-content: space-around;
-    background-color: #026873;
     color: white;
     font-weight: bold;
     position: relative;
@@ -49,37 +48,88 @@ ul {
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -300px; /* Initialement hors écran */
     height: 100%;
     width: 250px;
-    background-color: #333;
+    background: linear-gradient(135deg, rgb(43, 43, 63), rgb(30, 30, 45));
     color: white;
-    padding-top: 20px;
-    display: none;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
+    border-radius: 8px 0 0 8px; /* Arrondi sur la gauche */
     z-index: 1000;
-    padding-top: 8vh;
+    padding-top: 6vh;
+    padding-left: 10px; /* Un peu de respiration sur la gauche */
+    padding-bottom: 6vh;
+    transition: transform 0.4s ease-in-out; /* Animation fluide */
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 1rem; /* Espacement entre les éléments */
 }
+
+    /* Quand la sidebar est ouverte */
+    .sidebar.open {
+        transform: translateX(-250px); /* Fait apparaître la sidebar */
+    }
+
+    /* Style des liens dans la sidebar */
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar li {
+        margin: 0; /* Supprime les marges pour un alignement propre */
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Séparation légère */
+    }
+
+        .sidebar li:last-child {
+            border-bottom: none; /* Supprime la bordure du dernier élément */
+        }
+
+        .sidebar li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 5px 0; /* Réduit l'espace autour du texte */
+            display: inline-block; /* Pour limiter le rectangle à la taille du texte */
+        }
+
+            .sidebar li a:hover {
+                color: #b3e5e6;
+                background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une légère teinte bleue */
+                border-radius: 4px; /* Pour arrondir les coins du rectangle */
+            }
 
 /* Bouton Hamburger */
 .menu-toggle {
-    position: fixed; /* Fixe le bouton en haut à droite */
+    position: fixed;
     top: 20px;
     right: 20px;
     font-size: 30px;
     cursor: pointer;
-    z-index: 1010; /* Plus élevé que la sidebar pour être visible */
-    color: white; /* Assure que le bouton est visible */
+    z-index: 1010;
+    color: white;
+    transition: transform 0.3s ease;
 }
 
-/* Cacher la sidebar par défaut */
-.sidebar {
-    display: none;
-}
-
-    /* Quand la sidebar est ouverte, afficher */
-    .sidebar.open {
-        display: block;
+    .menu-toggle:hover {
+        transform: rotate(90deg);
     }
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+        .sidebar.open {
+            transform: translateX(-200px);
+        }
+}
+
 
 /* Logo */
 .logo {
@@ -148,7 +198,7 @@ section {
 
 /* Pied de page */
 footer {
-    background-color: rgb(128 128 128);
+    background-color: rgba(79,88,103,255);
     color: white;
     text-align: center;
     padding: 1rem;
