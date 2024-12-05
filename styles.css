@@ -2,31 +2,35 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #e0f7f9; /* Bleu très clair pour rappeler l'océan */
-    color: #064663; /* Bleu foncé pour le texte */
+    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%); /* Utilisation du dégradé du header comme fond */
+    color: white; /* Texte en blanc */
+    transition: background 0.3s ease; /* Transition fluide pour le fond */
 }
 
 h1, h2, h3 {
-    color: #064663;
+    color: white; /* Texte des titres en blanc */
 }
 
+/* Liens */
 a {
     text-decoration: none;
-    color: #026873; /* Bleu vert */
+    color: white; /* Liens blancs */
+    transition: color 0.3s ease;
 }
 
     a:hover {
-        color: #018A96; /* Légère variation au survol */
+        color: #b3e5e6; /* Changement de couleur au survol */
     }
 
 /* Menu */
 nav {
-    background-color: #026873; /* Bleu vert */
+    background-color: rgba(2, 104, 115, 0.9); /* Bleu vert avec transparence */
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
     nav ul {
@@ -47,14 +51,15 @@ nav {
             }
 
                 nav ul li a:hover {
-                    color: #e0f7f9; /* Couleur de l'arrière-plan */
+                    color: #b3e5e6; /* Légère variation au survol */
                 }
 
 /* Section d'accueil */
 header {
     text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(135deg, #e0f7f9, #64b5c7); /* Dégradé océan */
+    padding-top: 2rem;
+    background: linear-gradient(60deg, rgb(24, 48, 255) 0%, #b3e5e6 100%);
+    color: white;
 }
 
     header h1 {
@@ -74,9 +79,11 @@ section {
 
 .about {
     text-align: center;
-    background-color: #b3e5e6; /* Teinte pastel océan */
+    background-color: rgba(179, 229, 230, 0.8); /* Teinte pastel océan avec transparence */
     padding: 2rem;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
 }
 
 /* Galerie */
@@ -91,18 +98,97 @@ section {
         width: 100%;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
         .gallery img:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marquée au survol */
         }
 
 /* Pied de page */
 footer {
-    background-color: #026873;
+    background-color: rgba(2, 104, 115, 0.9);
     color: white;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* Flexbox centré */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Vagues */
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /* Fix pour safari */
+    min-height: 75px;
+    max-height: 150px;
+}
+
+/* Section de contenu */
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond avec transparence */
+    backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
+}
+
+/* Animation des vagues */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
 }
