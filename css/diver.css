@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.path {
+    stroke-linecap: round; /* Rounded ends for the path */
+}
+
+.diver {
+    position: absolute;
+    width: 40px; /* Adjust size as needed */
+    transition: transform 0.1s ease; /* Smooth rotation */
+    transform-origin: center; /* Ensure rotation is around the center */
+}
+
+/* Animation for swimming effect */
+@keyframes swim {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } /* Move up */
+    100% { transform: translateY(0); }
+}
+
+.swimming {
+    animation: swim 0.5s infinite; /* Adjust timing for speed */
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: lightblue; /* Optional: Set a background color */
+}
+
+#diver-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicks through the container */
+}
