@@ -1,0 +1,108 @@
+/* Styles généraux */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7f9; /* Bleu très clair pour rappeler l'océan */
+    color: #064663; /* Bleu foncé pour le texte */
+}
+
+h1, h2, h3 {
+    color: #064663;
+}
+
+a {
+    text-decoration: none;
+    color: #026873; /* Bleu vert */
+}
+
+    a:hover {
+        color: #018A96; /* Légère variation au survol */
+    }
+
+/* Menu */
+nav {
+    background-color: #026873; /* Bleu vert */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+
+        nav ul li {
+            font-weight: bold;
+        }
+
+            nav ul li a {
+                color: white;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: #e0f7f9; /* Couleur de l'arrière-plan */
+                }
+
+/* Section d'accueil */
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #e0f7f9, #64b5c7); /* Dégradé océan */
+}
+
+    header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+/* Section À propos */
+section {
+    padding: 2rem 1rem;
+}
+
+.about {
+    text-align: center;
+    background-color: #b3e5e6; /* Teinte pastel océan */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+/* Pied de page */
+footer {
+    background-color: #026873;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}

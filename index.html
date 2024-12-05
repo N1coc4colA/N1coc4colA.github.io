@@ -3,23 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Hello World</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Ocean Vibes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <nav>
+        <div>🌊 Ocean Vibes</div>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Bienvenue à Ocean Vibes</h1>
+        <p>Plongez dans un univers marin et laissez-vous inspirer par la beauté des océans.</p>
+    </header>
+
+    <section id="about" class="about">
+        <h2>À propos de nous</h2>
+        <p>Ocean Vibes est une plateforme dédiée aux amoureux de l'océan. Nous partageons des inspirations, des photos et des conseils pour préserver la vie marine.</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2 style="text-align:center;">Galerie</h2>
+        <img src="https://via.placeholder.com/200x150?text=Photo+1" alt="Photo océan 1">
+        <img src="https://via.placeholder.com/200x150?text=Photo+2" alt="Photo océan 2">
+        <img src="https://via.placeholder.com/200x150?text=Photo+3" alt="Photo océan 3">
+        <img src="https://via.placeholder.com/200x150?text=Photo+4" alt="Photo océan 4">
+    </section>
+
+    <footer id="contact">
+        <p>&copy; 2024 Ocean Vibes - Tous droits réservés</p>
+        <p><a href="mailto:contact@oceanvibes.com">contact@oceanvibes.com</a></p>
+    </footer>
 </body>
 </html>
