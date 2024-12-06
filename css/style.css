@@ -103,6 +103,20 @@ ul {
                 background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une l�g�re teinte bleue */
             }
 
+.sidebar {
+    background: linear-gradient(to bottom, #0077be, #003);
+    border-left: 2px solid #00bcd4;
+}
+
+    .sidebar li a {
+        transition: background 0.5s, transform 0.3s;
+    }
+
+        .sidebar li a:hover {
+            background: rgba(0, 123, 255, 0.3);
+            transform: scale(1.1);
+        }
+
 /* Bouton Hamburger */
 .menu-toggle {
     position: fixed;

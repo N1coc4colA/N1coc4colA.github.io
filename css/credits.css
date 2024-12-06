@@ -13,12 +13,12 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    color: white; 
+    color: white;
     transition: color 0.3s ease;
 }
 
     a:hover {
-        color: #b3e5e6; 
+        color: #b3e5e6;
     }
 
 ul {
@@ -45,25 +45,25 @@ ul {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; 
+    right: -300px;
     height: 100%;
     width: 250px;
     background: linear-gradient(135deg, rgba(43, 43, 63, 255), rgba(30, 30, 45, 0));
     backdrop-filter: blur(10px);
     color: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); 
-    border-radius: 8px 0 0 8px; 
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 8px 0 0 8px;
     z-index: 1000;
     padding-top: 8vh;
     padding-left: 15px;
     padding-bottom: 6vh;
-    transition: transform 0.4s ease-in-out; 
+    transition: transform 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
 }
-  
+
     .sidebar.open {
-        transform: translateX(-250px); 
+        transform: translateX(-250px);
     }
 
     .sidebar ul {
@@ -80,7 +80,7 @@ ul {
     }
 
         .sidebar li:last-child {
-            border-bottom: none; 
+            border-bottom: none;
         }
 
         .sidebar li a {
@@ -89,14 +89,14 @@ ul {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 5px; 
-            display: inline-block; 
-            border-radius: 4px; 
+            padding: 5px;
+            display: inline-block;
+            border-radius: 4px;
         }
 
             .sidebar li a:hover {
                 color: #b3e5e6;
-                background-color: rgba(255, 255, 255, 0.2); 
+                background-color: rgba(255, 255, 255, 0.2);
             }
 
 .menu-toggle {
@@ -139,10 +139,14 @@ footer {
 }
 
 .underwater {
-    height: 100vh; 
+    height: 100vh;
     background: linear-gradient(to bottom, #3dabe0, #3dabe0, #004d6b, #003);
     position: relative;
     top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 .water {
@@ -150,17 +154,17 @@ footer {
     color: #e0f7fa;
 }
 
-.water h2 {
-    font-size: 2.5em;
-    background: linear-gradient(to right, #00bcd4, #0077be);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    .water h2 {
+        font-size: 2.5em;
+        background: linear-gradient(to right, #00bcd4, #0077be);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-.water p {
-    font-size: 1.2em;
-    margin-top: 20px;
-}
+    .water p {
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
 
 .credits {
     text-align: center;
@@ -168,23 +172,24 @@ footer {
     background: rgba(0, 0, 0, 0.5);
 }
 
-.credits h3 {
-    font-size: 2em;
-    background: linear-gradient(to right, #00bcd4, #0077be);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.credits nofont {
-    font-size: 2em;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    .credits h3 {
+        font-size: 2em;
+        background: linear-gradient(to right, #00bcd4, #0077be);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-.credits p {
-    font-size: 1.1em;
-    margin-top: 10px;
-    color: #e0f7fa;
-}
+    .credits nofont {
+        font-size: 2em;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .credits p {
+        font-size: 1.1em;
+        margin-top: 10px;
+        color: #e0f7fa;
+    }
 
 .flex {
     display: flex;
@@ -196,4 +201,129 @@ footer {
 #animContainer {
     width: 100%;
     height: 100%;
+}
+
+
+.box {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin: 20px 0; /* Space between boxes */
+    width: 300px; /* Set a fixed width for the boxes */
+    border: 2px solid #00796b; /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    overflow: hidden; /* Hide overflow */
+}
+
+    .box img {
+        width: 100px; /* Set a fixed width for images */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 15px; /* Space between image and text */
+    }
+
+
+.alg img {
+    width: 400px; /* Set a fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.text-zone {
+    color: #00796b; /* Text color */
+    font-size: 1.2em; /* Font size */
+}
+
+.left {
+    align-self: flex-start; /* Align left boxes to the left */
+}
+
+.right {
+    align-self: flex-end; /* Align right boxes to the right */
+}
+
+.bottom {
+    align-self: flex-end;
+    align-items: center;
+    text-align: center; /* Align right boxes to the right */
+}
+
+.bottomleft {
+    align-self: flex-start; /* Align right boxes to the right */
+    align-items: flex-end;
+}
+
+.bottomright {
+    align-self: flex-end; /* Align right boxes to the right */
+    align-items: flex-end;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Additional ocean-themed styles */
+
+/* Parallax background effect */
+body {
+    background: url('https://example.com/ocean-background.jpg') fixed;
+    background-size: cover;
+}
+
+/* Wave animation */
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.water h2 {
+    animation: wave 2s infinite;
+    text-shadow: 0px 0px 10px #00bcd4;
+}
+
+/* Improved sidebar styling */
+.sidebar {
+    background: linear-gradient(to bottom, #0077be, #003);
+    border-left: 2px solid #00bcd4;
+}
+
+    .sidebar li a {
+        transition: background 0.5s, transform 0.3s;
+    }
+
+        .sidebar li a:hover {
+            background: rgba(0, 123, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+/* Buttons and links */
+button, a {
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background: rgba(0, 123, 255, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+    button:hover, a:hover {
+        background: #00bcd4;
+        box-shadow: 0px 0px 20px #00bcd4;
+    }
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
