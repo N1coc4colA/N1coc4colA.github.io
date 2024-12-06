@@ -57,3 +57,5 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("mouseup", () => {
   isDragging = false;
 });
+
+alert("Saisissez le carré, et déplacez-le pour voir les organes de la Terre!");

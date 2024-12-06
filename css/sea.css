@@ -37,26 +37,6 @@
     height: 100%;
   }
 
-  .heart-square {
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    overflow: hidden;
-  }
-
-  .heart-square img {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 200%;
-    height: 200%;
-    display: none;
-  }
-
   .movable-square {
     position: absolute;
     width: 100px;
@@ -70,24 +50,39 @@
     border-style: solid;
   }
 
+  .main-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+#myCanvas {
+    position: absolute;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+}
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 200px);
-  grid-auto-rows: 200px;
+  grid-auto-rows: 300px;
   justify-content: end;
   grid-gap: 10px;
   width: 100%;
   height: 100%;
   position: absolute;
   padding: 10px;
+  margin-top: 450px;
 }
 
 .grid-item {
   background-color: white;
   color: black;
   width: 200px;
-  height: 200px;
+  height: 300px;
   border-radius: 3px;
   padding: 5px;
 }
@@ -105,3 +100,7 @@
 .grid-item:nth-child(7) { grid-column: 4; grid-row: 1; }
 .grid-item:nth-child(8) { grid-column: 4; grid-row: 2; }
 .grid-item:nth-child(9) { grid-column: 4; grid-row: 3; }
+
+.organ {
+  clip-path: iniset(0, 0, 0, 0);
+}
