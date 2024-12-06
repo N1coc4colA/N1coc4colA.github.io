@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShaderToy Example</title>
+    <link rel="stylesheet" href="css/sea.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Carré fixe avec image1 et image2 -->
+        <div class="body-square" id="bodySquare">
+            <img src="assets/body.svg" alt="body" class="bodyimg" id="bodyimg">
+        </div>
+        <div class="heart-square" id="heartSquare">
+            <img src="assets/heart.svg" alt="heart" class="heartimg" id="heartimg">
+        </div>
+        <!-- Carré mobile -->
+        <div class="movable-square" id="movableSquare"></div>
+    </div>
+    <canvas id="myCanvas"></canvas>
+    <script src="js/ShaderToyLite.js"></script>
+    <script src="js/shader.js"></script>
+    <script src="js/sea.js"></script>
+</body>
+</html>
