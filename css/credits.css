@@ -7,21 +7,20 @@ body {
 }
 
 h1, h2, h3 {
-    color: white; /* Texte des titres en blanc */
+    color: white;
 }
 
-/* Liens */
+
 a {
     text-decoration: none;
-    color: white; /* Liens blancs */
+    color: white; 
     transition: color 0.3s ease;
 }
 
     a:hover {
-        color: #b3e5e6; /* Changement de couleur au survol */
+        color: #b3e5e6; 
     }
 
-/* Styles g�n�raux */
 ul {
     list-style: none;
     margin: 0;
@@ -43,33 +42,30 @@ ul {
             background-color: #018A96;
         }
 
-/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Initialement hors écran */
+    right: -300px; 
     height: 100%;
     width: 250px;
     background: linear-gradient(135deg, rgba(43, 43, 63, 255), rgba(30, 30, 45, 0));
     backdrop-filter: blur(10px);
     color: white;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
-    border-radius: 8px 0 0 8px; /* Arrondi sur la gauche */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); 
+    border-radius: 8px 0 0 8px; 
     z-index: 1000;
     padding-top: 8vh;
-    padding-left: 15px; /* Un peu de respiration sur la gauche */
+    padding-left: 15px;
     padding-bottom: 6vh;
-    transition: transform 0.4s ease-in-out; /* Animation fluide */
+    transition: transform 0.4s ease-in-out; 
     display: flex;
-    flex-direction: column; /* Alignement vertical */
+    flex-direction: column;
 }
-
-    /* Quand la sidebar est ouverte */
+  
     .sidebar.open {
-        transform: translateX(-250px); /* Fait apparaître la sidebar */
+        transform: translateX(-250px); 
     }
 
-    /* Style des liens dans la sidebar */
     .sidebar ul {
         list-style: none;
         padding: 0;
@@ -80,11 +76,11 @@ ul {
         text-align: left;
         font-size: 1rem;
         font-weight: 500;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Séparation légère */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
         .sidebar li:last-child {
-            border-bottom: none; /* Supprime la bordure du dernier élément */
+            border-bottom: none; 
         }
 
         .sidebar li a {
@@ -93,17 +89,16 @@ ul {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 5px; /* Augmente l'espace autour du texte */
-            display: inline-block; /* Pour limiter le rectangle à la taille du texte */
-            border-radius: 4px; /* Pour arrondir les coins du rectangle */
+            padding: 5px; 
+            display: inline-block; 
+            border-radius: 4px; 
         }
 
             .sidebar li a:hover {
                 color: #b3e5e6;
-                background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une légère teinte bleue */
+                background-color: rgba(255, 255, 255, 0.2); 
             }
 
-/* Bouton Hamburger */
 .menu-toggle {
     position: fixed;
     top: 20px;
@@ -119,8 +114,6 @@ ul {
         transform: rotate(90deg);
     }
 
-
-/* Adaptation mobile */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
@@ -146,15 +139,15 @@ footer {
 }
 
 .underwater {
-    height: 100vh; /* Make it taller to allow scrolling */
+    height: 100vh; 
     background: linear-gradient(to bottom, #3dabe0, #3dabe0, #004d6b, #003);
-    position: relative; /* Positionnement relatif */
+    position: relative;
     top: -10px;
 }
 
 .water {
     text-align: center;
-    color: #e0f7fa; /* Light blue color for text */
+    color: #e0f7fa;
 }
 
 .water h2 {
@@ -172,7 +165,7 @@ footer {
 .credits {
     text-align: center;
     padding: 50px 20px;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .credits h3 {
@@ -190,7 +183,7 @@ footer {
 .credits p {
     font-size: 1.1em;
     margin-top: 10px;
-    color: #e0f7fa; /* Light blue color for text */
+    color: #e0f7fa;
 }
 
 .flex {
