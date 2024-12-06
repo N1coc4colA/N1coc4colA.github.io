@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwater Effect</title>
+    <link rel="stylesheet" href="credits.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+    <style>
+        html, body{
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            width: 100%;
+            height: 100%; /* Ensure body takes full height */
+            background-color: #000133;
+        }
+        #animContainer {
+            width: 100%; /* Full width */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div> Solange</div>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="credits.html">Crédits</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <div class="water">
+            <h2>Welcome to the Depths</h2>
+            <p>Scroll down to dive deeper...</p>
+            <div id="animContainer"> </div>
+                <script>
+                    var animation = bodymovin.loadAnimation({
+                        container: document.getElementById('animContainer'),
+                        path: 'sealottie.json',
+                        render: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        name: 'waves animation',
+                    });
+                </script>
+        </div>
+        <div  class="underwater">
+
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Underwater Experience</p>
+    </footer>
+</body>
+</html>

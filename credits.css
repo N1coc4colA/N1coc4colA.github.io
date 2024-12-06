@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    width: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    background-color: #0077be;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    width: 100%;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.underwater {
+    height: 100vh; /* Make it taller to allow scrolling */
+    background: linear-gradient(to bottom, #3dabe0, #3dabe0, #004d6b, #003);
+    position: relative; /* Positionnement relatif */
+    top: -10px;
+}
+
+.water {
+    text-align: center;
+    color: #e0f7fa; /* Light blue color for text */
+    font-family: 'Lobster', cursive; /* Use the new font */
+}
+
+.water h2 {
+    font-size: 2.5em;
+    background: linear-gradient(to right, #00bcd4, #0077be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.water p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.credits {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+}
+
+.credits h3 {
+    font-size: 2em;
+    background: linear-gradient(to right, #00bcd4, #0077be);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.credits nofont {
+    font-size: 2em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.credits p {
+    font-size: 1.1em;
+    margin-top: 10px;
+    color: #e0f7fa; /* Light blue color for text */
+}
+
+
+#animContainer {
+    width: 100%;
+    height: 100%;
+}
+
+
+nav {
+    background-color: rgba(2, 104, 115, 0.9); /* Bleu vert avec transparence */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Lobster', cursive;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    font-family: 'Lobster', cursive;
+}
+
+nav ul li {
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+}
+
+nav ul li a {
+    color: white;
+    transition: color 0.3s;
+    font-family: 'Lobster', cursive;
+}
+
+nav ul li a:hover {
+    color: #b3e5e6; /* L�g�re variation au survol */
+    font-family: 'Lobster', cursive;
+}
