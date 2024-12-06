@@ -31,9 +31,6 @@ function getBoundingRectOfNonTransparentPixels(imgElement) {
   canvas.height = imgElement.naturalHeight;
 
   const img = loadImage(imgElement.src);
-  //const img = new Image();
-  //img.crossOrigin = 'anonymous'; // Set CORS attribute
-  //img.src = imgElement.src;
 
   // Draw the image on the canvas
   ctx.drawImage(imgElement, 0, 0);
@@ -118,11 +115,14 @@ document.addEventListener("mousemove", (e) => {
 
     // Vérifier la superposition entre les carrés
     const movableRect = movableSquare.getBoundingClientRect();
-    //const fixedRect = bodySquare.getBoundingClientRect();
+    const bRect = bodySquare.getBoundingClientRect();
 
     for (let i = 0; i < organs.length; i++) {
-      const fixedRect = bBoxes[i];
+      const tmpRect = bBoxes[i];
+      const fixedRect = {top: tmpRect.topLeft.y + bRect.top, bottom: tmpRect.bottomRight.y + bRect.top, right: tmpRect.bottomRight.x + bRect.left, left: tmpRect.topLeft.x + bRect.left};
+
       if (fixedRect == undefined) {
+        organs[i].style.display = "none";
         continue;
       }
 
@@ -133,9 +133,6 @@ document.addEventListener("mousemove", (e) => {
         movableRect.top < fixedRect.bottom &&
         movableRect.bottom > fixedRect.top
       ) {
-        const overlayWidth = Math.min(movableRect.right, fixedRect.right) - Math.max(movableRect.left, fixedRect.left);
-        const overlayHeight = Math.min(movableRect.bottom, fixedRect.bottom) - Math.max(movableRect.top, fixedRect.top);
-  
         organs[i].style.display = "block";
         organs[i].style.clipPath = `inset(${Math.max(movableRect.top, fixedRect.top) - fixedRect.top}px 
                                    ${fixedRect.right - Math.min(movableRect.right, fixedRect.right)}px 
