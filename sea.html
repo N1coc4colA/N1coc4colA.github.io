@@ -2,13 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>ShaderToy Example</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sea.css">
 </head>
 <body class="fill-it">
     <canvas id="myCanvas"></canvas>
+    <div class="grid-container">
+        <div class="grid-item" id="lungs-card">
+            <h2>Poumons</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="virus-card">
+            <h2>Virus</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="brain-card">
+            <h2>Cerveau</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="heart-card">
+            <h2>Coeur</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="liver-card">
+            <h2>Foie</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="intestines-card">
+            <h2>Intestins</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="kidneys-card">
+            <h2>Reins</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="bladder-card">
+            <h2>Vessie</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+        <div class="grid-item" id="stomach-card">
+            <h2>Estomac</h2>
+            <p>akez dvim vzedmje mke mek vm"ef vmk" mealjb"ma</p>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Carré fixe avec image1 et image2 -->
+        <div class="body-square" id="bodySquare">
+            <img src="assets/body.svg" alt="Corps de la planète" class="bodyimg" id="bodyimg">
+            <img src="assets/heart.svg" alt="Coeur" class="organ" id="heart-organ">
+            <img src="assets/kidneys.svg" alt="Reins" class="organ" id="kidney-organ">
+            <img src="assets/lungs.svg" alt="Poumons" class="organ" id="lungs-organ">
+            <img src="assets/virus.svg" alt="Virus" class="organ" id="virus-organ">
+            <img src="assets/stomach.svg" alt="Estomac" class="organ" id="stomach-organ">
+            <img src="assets/bladder.svg" alt="Vessie" class="organ" id="bladder-organ">
+            <img src="assets/liver.svg" alt="Foie" class="organ" id="liver-organ">
+            <img src="assets/intestines.svg" alt="Intestins" class="organ" id="intestines-organ">
+            <img src="assets/brain.svg" alt="Cerveau" class="organ" id="brain-organ">
+        </div>
+        <!-- Carré mobile -->
+        <div class="movable-square" id="movableSquare"></div>
+    </div>
     <script src="js/ShaderToyLite.js"></script>
     <script src="js/shader.js"></script>
+    <script src="js/sea.js"></script>
 </body>
 </html>
