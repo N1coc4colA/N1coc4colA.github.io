@@ -93,14 +93,14 @@ ul {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 5px 0; /* R�duit l'espace autour du texte */
+            padding: 5px; /* Augmente l'espace autour du texte */
             display: inline-block; /* Pour limiter le rectangle � la taille du texte */
+            border-radius: 4px; /* Pour arrondir les coins du rectangle */
         }
 
             .sidebar li a:hover {
                 color: #b3e5e6;
                 background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une l�g�re teinte bleue */
-                border-radius: 4px; /* Pour arrondir les coins du rectangle */
             }
 
 /* Bouton Hamburger */
