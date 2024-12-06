@@ -32,11 +32,11 @@ function getBoundingRectOfNonTransparentPixels(imgElement) {
 
   const img = loadImage(imgElement.src);
   //const img = new Image();
-  img.crossOrigin = 'anonymous'; // Set CORS attribute
-  img.src = imgElement.src;
+  //img.crossOrigin = 'anonymous'; // Set CORS attribute
+  //img.src = imgElement.src;
 
   // Draw the image on the canvas
-  ctx.drawImage(img, 0, 0);
+  ctx.drawImage(imgElement, 0, 0);
 
   // Get pixel data
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
