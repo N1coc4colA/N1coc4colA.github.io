@@ -1,14 +1,5 @@
-@font-face {
-    font-family: 'Lobster';
-    src: url('../assets/fonts/Lobster-Regular.woff2') format('woff2'), 
-         url('../assets/fonts/Lobster-Regular.woff') format('woff'),
-         url('../assets/fonts/Lobster-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    font-family: 'Lobster', sans-serif;
+    font-family: 'Arial', sans-serif;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -146,7 +137,6 @@ header {
     padding: 20px;
     text-align: center;
     margin: 0;
-    font-family: 'Lobster', cursive;
     width: 100%;
 }
 
@@ -165,7 +155,6 @@ footer {
 .water {
     text-align: center;
     color: #e0f7fa; /* Light blue color for text */
-    font-family: 'Lobster', cursive; /* Use the new font */
 }
 
 .water h2 {
