@@ -21,13 +21,12 @@ a {
         color: #b3e5e6; /* Changement de couleur au survol */
     }
 
-/* Styles gï¿½nï¿½raux */
+/* Styles généraux */
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around;
     color: white;
     font-weight: bold;
     position: relative;
@@ -48,26 +47,26 @@ ul {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Initialement hors ï¿½cran */
+    right: -300px; /* Initialement hors écran */
     height: 100%;
     width: 250px;
-    background: linear-gradient(135deg, rgb(43, 43, 63), rgb(30, 30, 45));
+    background: linear-gradient(135deg, rgba(43, 43, 63, 255), rgba(30, 30, 45, 0));
+    backdrop-filter: blur(10px);
     color: white;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner de la profondeur */
     border-radius: 8px 0 0 8px; /* Arrondi sur la gauche */
     z-index: 1000;
-    padding-top: 6vh;
-    padding-left: 10px; /* Un peu de respiration sur la gauche */
+    padding-top: 8vh;
+    padding-left: 15px; /* Un peu de respiration sur la gauche */
     padding-bottom: 6vh;
     transition: transform 0.4s ease-in-out; /* Animation fluide */
     display: flex;
     flex-direction: column; /* Alignement vertical */
-    gap: 1rem; /* Espacement entre les ï¿½lï¿½ments */
 }
 
     /* Quand la sidebar est ouverte */
     .sidebar.open {
-        transform: translateX(-250px); /* Fait apparaï¿½tre la sidebar */
+        transform: translateX(-250px); /* Fait apparaître la sidebar */
     }
 
     /* Style des liens dans la sidebar */
@@ -78,28 +77,29 @@ ul {
     }
 
     .sidebar li {
-        margin: 0; /* Supprime les marges pour un alignement propre */
         text-align: left;
         font-size: 1rem;
         font-weight: 500;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Sï¿½paration lï¿½gï¿½re */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Séparation légère */
     }
 
         .sidebar li:last-child {
-            border-bottom: none; /* Supprime la bordure du dernier ï¿½lï¿½ment */
+            border-bottom: none; /* Supprime la bordure du dernier élément */
         }
 
         .sidebar li a {
+            margin-top: 1vh;
+            margin-bottom: 1vh;
             color: white;
             text-decoration: none;
             transition: color 0.3s ease, background-color 0.3s ease;
-            padding: 5px 0; /* Rï¿½duit l'espace autour du texte */
-            display: inline-block; /* Pour limiter le rectangle ï¿½ la taille du texte */
+            padding: 5px 0; /* Réduit l'espace autour du texte */
+            display: inline-block; /* Pour limiter le rectangle à la taille du texte */
         }
 
             .sidebar li a:hover {
                 color: #b3e5e6;
-                background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une lï¿½gï¿½re teinte bleue */
+                background-color: rgba(255, 255, 255, 0.2); /* Ajout d'une légère teinte bleue */
                 border-radius: 4px; /* Pour arrondir les coins du rectangle */
             }
 
@@ -140,9 +140,9 @@ ul {
 }
 
     .logo img {
-        max-height: 100%; /* Le logo ne dï¿½passera pas la hauteur de la barre */
-        max-width: 100%; /* Le logo ne dï¿½passera pas la largeur de son conteneur */
-        object-fit: contain; /* Assure que le logo garde ses proportions sans dï¿½formation */
+        max-height: 100%; /* Le logo ne dépassera pas la hauteur de la barre */
+        max-width: 100%; /* Le logo ne dépassera pas la largeur de son conteneur */
+        object-fit: contain; /* Assure que le logo garde ses proportions sans déformation */
     }
 
 /* Section d'accueil */
@@ -163,38 +163,39 @@ header {
         margin-top: 1rem;
     }
 
-/* Section ï¿½ propos */
+/* Section À propos */
 section {
     padding: 2rem 1rem;
 }
 
 .about {
     text-align: center;
-    background-color: rgba(179, 229, 230, 0.8); /* Teinte pastel ocï¿½an avec transparence */
+    background-color: rgba(179, 229, 230, 0.8); /* Teinte pastel océan avec transparence */
     padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px); /* Flou d'arriï¿½re-plan pour un effet lisse */
+    backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
 }
 
-/* Galerie */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grille responsive */
+    gap: 1rem; /* Espacement entre les images */
 }
 
     .gallery img {
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 200px; /* Hauteur fixe pour les images */
+        object-fit: cover; /* Remplit le cadre et recadre si nécessaire */
+        border-radius: 10px; /* Coins arrondis pour un design agréable */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour un effet visuel */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
     }
 
         .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marquï¿½e au survol */
+            transform: scale(1.05); /* Zoom léger au survol */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); /* Ombre plus marquée au survol */
         }
+
 
 /* Pied de page */
 footer {
@@ -205,7 +206,7 @@ footer {
     margin-top: 2rem;
 }
 
-/* Flexbox centrï¿½ */
+/* Flexbox centré */
 .flex {
     display: flex;
     justify-content: center;
@@ -229,7 +230,7 @@ footer {
     height: 20vh;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Fond avec transparence */
-    backdrop-filter: blur(10px); /* Flou d'arriï¿½re-plan pour un effet lisse */
+    backdrop-filter: blur(10px); /* Flou d'arrière-plan pour un effet lisse */
 }
 
 /* Animation des vagues */
@@ -281,13 +282,4 @@ footer {
     h1 {
         font-size: 24px;
     }
-}
-
-#myCanvas {
-    display: block; /* Remove inline spacing */
-}
-
-.fill-it {
-    margin: 0; /* Remove default margin */
-    overflow: hidden; /* Prevent scrollbars */
 }
